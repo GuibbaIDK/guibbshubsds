@@ -1,0 +1,52 @@
+loadstring([[
+-- Criação dos botões diretamente na tela
+local RollbackButton = Instance.new("TextButton")
+local StopButton = Instance.new("TextButton")
+local RejoinButton = Instance.new("TextButton")
+
+-- Configurações do botão "Turn On Rollback"
+RollbackButton.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+RollbackButton.Size = UDim2.new(0, 200, 0, 50)  -- Tamanho do botão
+RollbackButton.Position = UDim2.new(0.5, -100, 0.3, 0)  -- Posiciona no centro
+RollbackButton.Text = "Turn On Rollback"
+RollbackButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  -- Cor do botão
+RollbackButton.TextColor3 = Color3.fromRGB(0, 0, 0)  -- Cor do texto preta
+
+-- Configurações do botão "Turn Off Rollback"
+StopButton.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+StopButton.Size = UDim2.new(0, 200, 0, 50)
+StopButton.Position = UDim2.new(0.5, -100, 0.5, 0)
+StopButton.Text = "Turn Off Rollback"
+StopButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StopButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+-- Configurações do botão "Reentrar"
+RejoinButton.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+RejoinButton.Size = UDim2.new(0, 200, 0, 50)
+RejoinButton.Position = UDim2.new(0.5, -100, 0.7, 0)
+RejoinButton.Text = "Reentrar no Jogo"
+RejoinButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RejoinButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+
+-- Função para ativar o rollback
+RollbackButton.MouseButton1Click:Connect(function()
+    print("Rollback ativado!")
+    -- Aqui você pode colocar o código para ativar o rollback, se necessário
+end)
+
+-- Função para desativar o rollback
+StopButton.MouseButton1Click:Connect(function()
+    print("Rollback desativado!")
+    -- Aqui você pode colocar o código para desativar o rollback, se necessário
+end)
+
+-- Função para reentrar no jogo
+RejoinButton.MouseButton1Click:Connect(function()
+    local TeleportService = game:GetService("TeleportService")
+    local player = game.Players.LocalPlayer
+    print("Reentrando no jogo...")  -- Log de Debug
+    TeleportService:Teleport(game.PlaceId, player)
+end)
+
+print("Botões carregados com sucesso!")
+]])()
