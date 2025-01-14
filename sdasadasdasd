@@ -71,4 +71,10 @@ end)
 -- Função para reentrar no jogo
 RejoinButton.MouseButton1Click:Connect(function()
     local TeleportService = game:GetService("TeleportService")
-    local player = 
+    local player = game.Players.LocalPlayer
+    print("Reentrando no jogo...")  -- Log de Debug
+    TeleportService:Teleport(game.PlaceId, player)
+end)
+
+print("GUI de rollback carregada com sucesso!")
+]])()
